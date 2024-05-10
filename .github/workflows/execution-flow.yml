@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set x
-        run: echo "x=2" >> $GITHUB_ENV
+        run: echo "x=12" >> $GITHUB_ENV
 
       - name: Conditional Step
         if: ${{ env.x > '2' }}
@@ -16,4 +16,4 @@ jobs:
       
       - name: Next Step
         if: ${{ env.x <= '2' }}
-        run: echo "x is not greater than 2"
+        run: echo "x is not greater than 2 ${{ env.x }}"
