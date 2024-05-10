@@ -2,9 +2,7 @@ name: if condition
 on:
   push:
     branches:
-      - master
-name: Conditional Workflow
-
+      - main
 jobs:
   conditional_job:
     runs-on: ubuntu-latest
