@@ -1,0 +1,21 @@
+name: if condition
+on:
+  push:
+    branches:
+      - master
+name: Conditional Workflow
+
+jobs:
+  conditional_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set x
+        run: echo "x=2" >> $GITHUB_ENV
+
+      - name: Conditional Step
+        if: ${{ env.x > '2' }}
+        run: echo "x is greater than 2"
+      
+      - name: Next Step
+        if: ${{ env.x <= '2' }}
+        run: echo "x is not greater than 2"
